@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send("getting root!");
+  res.send("Activate interlock! Dynotherms connected! Infracells up! Mega thrusters are go!!");
 });
 
 app.get('/creatures', (req, res) => {
@@ -21,6 +21,6 @@ app.get('/spells', (req, res) => {
   return res.json(spellsDB);
 });
 
-app.listen(3000, () => {
-  console.log('app is running on port 3000');
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`app is running on port ${process.env.PORT}`);
 });
